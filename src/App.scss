@@ -1,0 +1,217 @@
+@use "sass:math";
+$slide-count: 1;
+$visibleCount: 4;
+$slide-width: math.div(100, $visibleCount) * 1rem;
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrap {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.inner {
+    height: 40rem;
+    position: relative;
+    width: #{$slide-width * $visibleCount};
+}
+
+.container {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slide-list {
+    height: 100%;
+    left: 50%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    transform: translateX(-50%);
+    width: calc(#{($slide-count + 0.5) * $slide-width * 2});
+}
+
+.slide-item {
+    display: inline-block;
+    height: $slide-width;
+    margin: 0;
+    padding: 1rem;
+    position: absolute;
+    transition: all 0.3s;
+    width: $slide-width;
+}
+
+.btn {
+    align-items: center;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 7px;
+    background-color: #eee;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-arrow {
+    border: solid black;
+    border-width: 0 0.4rem 0.4rem 0;
+    height: 12px;
+    padding: 3px;
+    width: 12px;
+    &--left {
+        transform: rotate(135deg);
+    }
+    &--right {
+        transform: rotate(-45deg);
+    }
+}
+
+.dots {
+    display: inline-block;
+    left: 50%;
+    margin-top: 2rem;
+    position: absolute;
+    transform: translateX(-50%);
+    .dot {
+        background: #ccc;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 2rem;
+        margin: 0 0.3rem;
+        outline: none;
+        transform: scale(0.5);
+        width: 2rem;
+        &.active {
+            background: black;
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    max-width: calc(80% - 10px);
+    justify-content: flex-end;
+}
+
+// w3schools card
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+    padding: 2px 16px;
+}
+
+// card
+$theme-color: #0058de;
+$primary-color: #428cd4;
+$secondary-color: #ff9cda;
+$shadow-default: 0 0.8em 1em -0.5em rgba(darken($theme-color, 30%), 0.15),
+0 1px 3px -2px rgba(darken($theme-color, 30%), 0.15);
+.btn {
+    &-theme {
+        border-width: 0;
+        background-color: $theme-color;
+        background-image: linear-gradient( to bottom, $theme-color, darken($theme-color, 12%));
+        color: white;
+        &:hover {
+            color: white;
+            background-color: darken($theme-color, 10%);
+            background-image: linear-gradient( to bottom, $theme-color, darken($theme-color, 18%));
+        }
+        &:focus {
+            box-shadow: none;
+        }
+        &:active {
+            background-image: linear-gradient( to bottom, $theme-color, darken($theme-color, 26%));
+        }
+    }
+    &-longer {
+        min-width: 12em;
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+        text-transform: uppercase;
+    }
+}
+
+// Card
+.card {
+    border: 0;
+    font-size: 1.3em;
+    box-shadow: $shadow-default;
+    &-header {
+        border-bottom: 0;
+        background-image: linear-gradient(150deg, $primary-color, $secondary-color);
+        color: white;
+    }
+    &-footer {
+        background-color: rgba($theme-color, 0.05);
+        color: rgba(black, 0.5);
+        border-top: 0;
+        user-select: none;
+    }
+}
+
+.add-card {
+    min-height: 100%;
+    box-shadow: none;
+    background-color: rgba(black, 0.05);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    &:hover {
+        background-color: rgba(black, 0.08);
+        border-color: rgba(black, 0.08);
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: rgba(black, 0.15);
+    }
+}
+
+.react {
+    &-form {
+        max-width: 42em;
+        padding: 1.5em;
+        background-color: #fff;
+        border-radius: 0.5em;
+        box-shadow: $shadow-default;
+        .form {
+            &-control {
+                height: 3em;
+                border-width: 2px;
+                &:focus {
+                    border-color: $theme-color;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
