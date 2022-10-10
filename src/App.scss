@@ -73,7 +73,7 @@ a {
 
 .btn-arrow {
     border: solid black;
-    border-width: 0 0.4rem 0.4rem 0;
+    border-width: 0 0.3rem 0.3rem 0;
     height: 12px;
     padding: 3px;
     width: 12px;
@@ -166,11 +166,12 @@ $shadow-default: 0 0.8em 1em -0.5em rgba(darken($theme-color, 30%), 0.15),
     border: 0;
     font-size: 1.3em;
     box-shadow: $shadow-default;
-    box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.6) 0px 2px 8px 0px;    
     border-radius:6px;
     .card-header{
         padding:5px;
-        font-size:1.1em
+        font-size:1.1em;
+        text-transform: capitalize;
     }
     &-header {
         border-bottom: 0;
