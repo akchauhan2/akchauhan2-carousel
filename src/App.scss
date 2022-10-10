@@ -45,7 +45,8 @@ a {
     padding: 0;
     position: absolute;
     transform: translateX(-50%);
-    width: calc(#{($slide-count + 0.5) * $slide-width * 2});
+    width: 100%;
+    //width: calc(#{($slide-count + 0.5) * $slide-width * 2});
 }
 
 .slide-item {
