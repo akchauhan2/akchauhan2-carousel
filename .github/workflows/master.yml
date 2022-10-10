@@ -26,5 +26,5 @@ jobs:
           server: 156.67.73.246
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /developer/react-carousel
+          server-dir: /developer/react-carousel/
           local-dir: ./build/
