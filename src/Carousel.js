@@ -5,7 +5,7 @@ const cardWidth = 25;
 const _items = new Array(5).fill(0).map((_, idx) => ({
   pos: idx,
 }));
-//_items.push(..._items);
+_items.push(..._items);
 
 const sleep = (ms = 0) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
